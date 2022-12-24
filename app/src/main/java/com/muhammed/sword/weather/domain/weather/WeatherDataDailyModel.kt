@@ -1,5 +1,6 @@
-package com.muhammed.sword.weather.data.model
+package com.muhammed.sword.weather.domain.weather
 
+import com.muhammed.sword.weather.domain.weather.WeatherType
 import java.time.LocalDate
 
 data class WeatherDataDailyModel(

@@ -4,18 +4,18 @@ import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.muhammed.sword.weather.data.model.DailyDto
 import com.muhammed.sword.weather.data.model.HourlyDto
-import com.muhammed.sword.weather.data.model.HourlyUnits
+import com.muhammed.sword.weather.data.model.HourlyUnitsDto
 
 class Converters {
 
     @TypeConverter
-    fun hourlyUnitsToString(hourlyUnits: HourlyUnits): String {
+    fun hourlyUnitsToString(hourlyUnits: HourlyUnitsDto): String {
         return Gson().toJson(hourlyUnits).toString()
     }
 
     @TypeConverter
-    fun stringToHourlyUnits(hourlyUnits: String): HourlyUnits {
-        return Gson().fromJson(hourlyUnits, HourlyUnits::class.java)
+    fun stringToHourlyUnits(hourlyUnits: String): HourlyUnitsDto {
+        return Gson().fromJson(hourlyUnits, HourlyUnitsDto::class.java)
     }
 
     @TypeConverter

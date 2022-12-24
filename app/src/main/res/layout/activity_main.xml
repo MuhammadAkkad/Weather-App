@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.muhammed.sword.weather.data.model.CurrentWeatherModel" />
+            type="com.muhammed.sword.weather.domain.weather.CurrentWeatherModel" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/screen_background_gradient"
-                tools:context=".weather.ui.MainActivity">
+                tools:context=".weather.ui.weather.MainActivity">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/connectingLayout"

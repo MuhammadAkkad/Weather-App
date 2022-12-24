@@ -1,4 +1,6 @@
-package com.muhammed.sword.weather.data.model
+package com.muhammed.sword.weather.domain.weather
+
+import com.muhammed.sword.weather.domain.weather.WeatherType
 
 data class CurrentWeatherModel(
     val temperatureCelsius: Double,

@@ -1,4 +1,4 @@
-package com.muhammed.sword.weather.data.model
+package com.muhammed.sword.weather.domain.weather
 
 import androidx.annotation.DrawableRes
 import com.muhammed.sword.R

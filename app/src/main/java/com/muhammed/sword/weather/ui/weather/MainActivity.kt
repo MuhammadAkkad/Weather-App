@@ -1,4 +1,4 @@
-package com.muhammed.sword.weather.ui
+package com.muhammed.sword.weather.ui.weather
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -15,6 +15,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.muhammed.sword.R
 import com.muhammed.sword.databinding.ActivityMainBinding
+import com.muhammed.sword.weather.ui.adapter.DailyAdapter
+import com.muhammed.sword.weather.ui.adapter.HourlyAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

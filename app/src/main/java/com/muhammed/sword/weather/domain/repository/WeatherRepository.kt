@@ -1,7 +1,7 @@
 package com.muhammed.sword.weather.domain.repository
 
 import com.muhammed.sword.weather.data.model.WeatherDataDto
-import com.muhammed.sword.weather.data.model.WeatherInfo
+import com.muhammed.sword.weather.domain.weather.WeatherInfo
 import com.muhammed.sword.weather.domain.util.Resource
 import kotlinx.coroutines.flow.Flow
 

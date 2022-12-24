@@ -1,23 +1,22 @@
-package com.muhammed.sword.weather.ui
+package com.muhammed.sword.weather.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.muhammed.sword.databinding.ItemHourlyBinding
-import com.muhammed.sword.weather.data.model.WeatherDataHourlyModel
+import com.muhammed.sword.databinding.ItemDailyBinding
+import com.muhammed.sword.weather.domain.weather.WeatherDataDailyModel
 
 
-class HourlyAdapter() :
-    RecyclerView.Adapter<HourlyAdapter.ViewHolder>() {
+class DailyAdapter :
+    RecyclerView.Adapter<DailyAdapter.ViewHolder>() {
 
+    private var itemList: List<WeatherDataDailyModel> = arrayListOf()
 
-    private var itemList: List<WeatherDataHourlyModel> = arrayListOf()
-
-    class ViewHolder(private val binding: ItemHourlyBinding) :
+    class ViewHolder(private val binding: ItemDailyBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val view = itemView
 
-        fun bind(data: WeatherDataHourlyModel) {
+        fun bind(data: WeatherDataDailyModel) {
             binding.data = data
             binding.executePendingBindings()
         }
@@ -25,7 +24,7 @@ class HourlyAdapter() :
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = ItemHourlyBinding.inflate(layoutInflater, parent, false)
+                val binding = ItemDailyBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(
                     binding
                 )
@@ -49,7 +48,7 @@ class HourlyAdapter() :
         return itemList.size
     }
 
-    fun addData(data: List<WeatherDataHourlyModel>) {
+    fun addData(data: List<WeatherDataDailyModel>) {
         this.itemList = data
         notifyDataSetChanged()
     }

@@ -3,6 +3,7 @@ package com.muhammed.sword.weather.data.mappers
 import com.muhammed.sword.weather.data.Constants.Companion.DAILY_DATE_FORMAT
 import com.muhammed.sword.weather.data.Extensions.parseDate
 import com.muhammed.sword.weather.data.model.*
+import com.muhammed.sword.weather.domain.weather.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

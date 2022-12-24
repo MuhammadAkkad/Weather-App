@@ -1,11 +1,11 @@
-package com.muhammed.sword.weather.ui
+package com.muhammed.sword.weather.ui.binding
 
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.muhammed.sword.weather.data.model.CurrentWeatherModel
-import com.muhammed.sword.weather.data.model.WeatherDataHourlyModel
-import com.muhammed.sword.weather.data.model.WeatherType
+import com.muhammed.sword.weather.domain.weather.CurrentWeatherModel
+import com.muhammed.sword.weather.domain.weather.WeatherDataHourlyModel
+import com.muhammed.sword.weather.domain.weather.WeatherType
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

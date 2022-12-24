@@ -2,7 +2,7 @@ package com.muhammed.sword.weather.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class HourlyUnits(
+data class HourlyUnitsDto(
     @SerializedName("relativehumidity_2m") val relativeHumidity_2m: String?,
     @SerializedName("temperature_2m") val temperature_2m: String?,
     @SerializedName("time") val time: String?,

@@ -1,8 +1,8 @@
-package com.muhammed.sword.weather.ui
+package com.muhammed.sword.weather.ui.weather
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.muhammed.sword.weather.data.location.MyLocationTracker
+import com.muhammed.sword.weather.data.location.LocationTrackerImp
 import com.muhammed.sword.weather.domain.repository.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val repository: WeatherRepository,
-    private val locationTracker: MyLocationTracker
+    private val locationTracker: LocationTrackerImp
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(WeatherState())

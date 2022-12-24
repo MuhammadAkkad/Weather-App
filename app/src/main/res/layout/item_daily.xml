@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.muhammed.sword.weather.data.model.WeatherDataDailyModel" />
+            type="com.muhammed.sword.weather.domain.weather.WeatherDataDailyModel" />
 
     </data>
 

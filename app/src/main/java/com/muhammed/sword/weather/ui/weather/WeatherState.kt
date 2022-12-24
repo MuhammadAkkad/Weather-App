@@ -1,6 +1,6 @@
-package com.muhammed.sword.weather.ui
+package com.muhammed.sword.weather.ui.weather
 
-import com.muhammed.sword.weather.data.model.WeatherInfo
+import com.muhammed.sword.weather.domain.weather.WeatherInfo
 
 data class WeatherState(
     val data: WeatherInfo? = null,

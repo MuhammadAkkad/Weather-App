@@ -6,7 +6,7 @@
 
         <variable
             name="data"
-            type="com.muhammed.sword.weather.data.model.WeatherDataHourlyModel" />
+            type="com.muhammed.sword.weather.domain.weather.WeatherDataHourlyModel" />
 
     </data>
 

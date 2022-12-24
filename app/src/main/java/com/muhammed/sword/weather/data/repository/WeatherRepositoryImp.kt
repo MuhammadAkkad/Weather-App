@@ -4,7 +4,7 @@ import com.muhammed.sword.weather.data.api.ApiService
 import com.muhammed.sword.weather.data.db.WeatherDao
 import com.muhammed.sword.weather.data.mappers.toWeatherInfo
 import com.muhammed.sword.weather.data.model.WeatherDataDto
-import com.muhammed.sword.weather.data.model.WeatherInfo
+import com.muhammed.sword.weather.domain.weather.WeatherInfo
 import com.muhammed.sword.weather.domain.repository.WeatherRepository
 import com.muhammed.sword.weather.domain.util.Resource
 import kotlinx.coroutines.Dispatchers
