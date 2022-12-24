@@ -1,8 +1,8 @@
 package com.muhammed.sword.weather.data.model
 
-import androidx.room.Entity
-
 data class WeatherInfo(
-    val weatherDataPerDay: Map<Int, List<WeatherData>>,
-    val currentWeatherData: WeatherData?
+    val weatherDataPerDay: List<WeatherDataDailyModel> ,
+    val weatherDataPerHour: List<WeatherDataHourlyModel>,
+    val currentWeather: CurrentWeatherModel?,
+    val tempUnit: String?,
 )

@@ -2,7 +2,6 @@ package com.muhammed.sword.weather.di
 
 import android.app.Application
 import android.content.Context
-import android.location.Location
 import androidx.room.Room
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -10,7 +9,6 @@ import com.muhammed.sword.weather.data.Constants
 import com.muhammed.sword.weather.data.api.ApiProvider
 import com.muhammed.sword.weather.data.db.WeatherDao
 import com.muhammed.sword.weather.data.db.WeatherDataBase
-import com.muhammed.sword.weather.data.location.MyLocationTracker
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

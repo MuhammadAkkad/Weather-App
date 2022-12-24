@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SWORD</string>
+    <string name="today_forecast">TODAY\'S HOURLY FORECAST</string>
+    <string name="ten_days_forecast">7-DAY FORECAST</string>
+
+    <string name="temp_placeholder">--</string>
+    <string name="h_l_placeholder">H: -°  L: -°</string>
+    <string name="connecting">Connecting</string>
+    <string name="permission_title">Location permission</string>
+    <string name="permission_message">Allow app to access your location to provide you with forecast data</string>
+
 </resources>

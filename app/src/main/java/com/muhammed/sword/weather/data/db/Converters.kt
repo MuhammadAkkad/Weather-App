@@ -2,33 +2,11 @@ package com.muhammed.sword.weather.data.db
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
-import com.muhammed.sword.weather.data.model.CurrentWeather
-import com.muhammed.sword.weather.data.model.Hourly
+import com.muhammed.sword.weather.data.model.DailyDto
+import com.muhammed.sword.weather.data.model.HourlyDto
 import com.muhammed.sword.weather.data.model.HourlyUnits
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class Converters {
-
-    @TypeConverter
-    fun dateToString(date: LocalDateTime): String {
-        return date.toString()
-    }
-
-    @TypeConverter
-    fun stringToDate(stringDate: String): LocalDateTime {
-        return LocalDateTime.parse(stringDate, DateTimeFormatter.ISO_DATE_TIME);
-    }
-
-    @TypeConverter
-    fun currentWeatherToString(currentWeather: CurrentWeather): String {
-        return Gson().toJson(currentWeather).toString()
-    }
-
-    @TypeConverter
-    fun stringToCurrentWeather(currentWeather: String): CurrentWeather {
-        return Gson().fromJson(currentWeather, CurrentWeather::class.java)
-    }
 
     @TypeConverter
     fun hourlyUnitsToString(hourlyUnits: HourlyUnits): String {
@@ -41,14 +19,23 @@ class Converters {
     }
 
     @TypeConverter
-    fun hourlyToString(hourly: Hourly): String {
+    fun hourlyToString(hourly: HourlyDto): String {
         return Gson().toJson(hourly).toString()
     }
 
     @TypeConverter
-    fun stringToHourly(hourly: String): Hourly {
-        return Gson().fromJson(hourly, Hourly::class.java)
+    fun stringToHourly(hourly: String): HourlyDto {
+        return Gson().fromJson(hourly, HourlyDto::class.java)
     }
 
+    @TypeConverter
+    fun dailyToString(dailyDto: DailyDto): String {
+        return Gson().toJson(dailyDto).toString()
+    }
+
+    @TypeConverter
+    fun stringToDaily(dailyDto: String): DailyDto {
+        return Gson().fromJson(dailyDto, DailyDto::class.java)
+    }
 
 }
