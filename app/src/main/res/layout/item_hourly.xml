@@ -14,7 +14,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/margin_16"
         android:gravity="center"
         android:orientation="vertical"
         tools:background="@color/black_off">
@@ -26,14 +26,14 @@
             android:fontFamily="@font/roboto_medium"
             android:setHour="@{data}"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_size_12"
             tools:text="11pm" />
 
         <ImageView
             android:id="@+id/item_hourly_weather_type"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:layout_marginTop="@dimen/margin_6"
             android:contentDescription="@null"
             android:iconRes="@{data.weatherType}"
             android:scaleType="fitCenter"
@@ -43,11 +43,11 @@
             android:id="@+id/item_hourly_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="@dimen/margin_6"
             android:fontFamily="@font/roboto_medium"
             android:setHourTemp="@{data}"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_16"
             tools:text="7" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

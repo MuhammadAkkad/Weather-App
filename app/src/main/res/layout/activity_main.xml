@@ -30,7 +30,7 @@
                     android:id="@+id/connectingLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginEnd="@dimen/margin_12"
                     android:orientation="horizontal"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="6dp"
+                        android:layout_marginEnd="@dimen/margin_6"
                         android:fontFamily="@font/roboto_light"
                         android:includeFontPadding="false"
                         android:text="@string/connecting"
@@ -52,8 +52,8 @@
                         android:layout_gravity="center"
                         android:indeterminate="true"
                         app:indicatorColor="@color/white"
-                        app:indicatorSize="12dp"
-                        app:trackThickness="1dp" />
+                        app:indicatorSize="@dimen/margin_12"
+                        app:trackThickness="@dimen/margin_1" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -78,7 +78,7 @@
                         android:setTemp="@{data.temperatureCelsius}"
                         android:text="@string/temp_placeholder"
                         android:textColor="@color/white_off"
-                        android:textSize="80sp" />
+                        android:textSize="@dimen/text_size_80" />
 
                     <TextView
                         android:id="@+id/description"
@@ -88,19 +88,19 @@
                         android:includeFontPadding="false"
                         android:text="@{data.weatherType.weatherDesc}"
                         android:textColor="@color/white_off"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/text_size_20"
                         tools:text="foggy" />
 
                     <TextView
                         android:id="@+id/tempHighAndLow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="@dimen/margin_6"
                         android:fontFamily="@font/roboto_light"
                         android:includeFontPadding="false"
                         android:setHighAndLow="@{data}"
                         android:textColor="@color/white_off"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/text_size_20"
                         tools:text="@string/h_l_placeholder" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -109,9 +109,9 @@
                     android:id="@+id/hourlyRvCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginEnd="@dimen/margin_16"
                     android:background="@drawable/list_background"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -121,31 +121,31 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_12"
                         android:fontFamily="@font/roboto"
                         android:text="@string/today_forecast"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/text_size_12" />
 
                     <com.google.android.material.divider.MaterialDivider
                         android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="6dp"
+                        android:layout_height="@dimen/margin_0.5"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_6"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:layout_marginBottom="@dimen/margin_6"
                         app:dividerColor="@color/white" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/hourlyRv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="@dimen/margin_12"
+                        android:layout_marginBottom="@dimen/margin_12"
                         android:clipToPadding="false"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp" />
+                        android:paddingStart="@dimen/margin_16"
+                        android:paddingEnd="@dimen/margin_16" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -153,10 +153,10 @@
                     android:id="@+id/dailyRvCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="32dp"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_32"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_32"
                     android:background="@drawable/list_background"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -168,29 +168,29 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_12"
                         android:fontFamily="@font/roboto"
                         android:text="@string/ten_days_forecast"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/text_size_12" />
 
                     <com.google.android.material.divider.MaterialDivider
                         android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="6dp"
+                        android:layout_height="@dimen/margin_0.5"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_6"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:layout_marginBottom="@dimen/margin_6"
                         app:dividerColor="@color/white" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/dailyRv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:layout_marginBottom="@dimen/margin_32"
                         android:nestedScrollingEnabled="false"
                         android:orientation="vertical" />
 

@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/typeIv"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
             android:contentDescription="@null"
             android:iconRes="@{data.weatherType}"
             android:scaleType="fitCenter"
@@ -58,9 +58,9 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/materialDivider"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/margin_0"
+            android:layout_height="@dimen/margin_2"
+            android:layout_margin="@dimen/margin_10"
             android:background="@drawable/temp_gradient"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tempHighTv"
@@ -85,8 +85,8 @@
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="@dimen/margin_0.5"
+            android:layout_marginTop="@dimen/margin_4"
             app:dividerColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

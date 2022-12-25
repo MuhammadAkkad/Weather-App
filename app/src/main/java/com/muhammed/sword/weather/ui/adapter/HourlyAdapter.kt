@@ -7,7 +7,7 @@ import com.muhammed.sword.databinding.ItemHourlyBinding
 import com.muhammed.sword.weather.domain.weather.WeatherDataHourlyModel
 
 
-class HourlyAdapter() :
+class HourlyAdapter :
     RecyclerView.Adapter<HourlyAdapter.ViewHolder>() {
 
 

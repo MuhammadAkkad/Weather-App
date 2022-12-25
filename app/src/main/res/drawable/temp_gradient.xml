@@ -5,6 +5,6 @@
         android:angle="135"
         android:endColor="@color/temp_min_color"
         android:startColor="@color/temp_max_color" />
-    <corners android:radius="30dp" />
+    <corners android:radius="@dimen/margin_30" />
 
 </shape>

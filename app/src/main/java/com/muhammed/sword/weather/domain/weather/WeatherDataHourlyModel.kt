@@ -7,5 +7,4 @@ data class WeatherDataHourlyModel(
     val time: LocalDateTime,
     val temperatureCelsius: Double,
     val weatherType: WeatherType
-) {
-}
+)
