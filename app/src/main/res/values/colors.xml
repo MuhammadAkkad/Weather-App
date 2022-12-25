@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue_800">#1565c0</color>
-    <color name="light_blue_700">#0288d1</color>
-    <color name="blue_50">#e3f2fd</color>
+    <color name="color_primary">#1565c0</color>
+    <color name="color_secondary">#0288d1</color>
+    <color name="color_variant">#e3f2fd</color>
     <color name="temp_min_color">#43a047</color>
     <color name="temp_max_color">#ff7043</color>
 
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="green_200">#388e3c</color>
+    <color name="green_700">#a5d6a7</color>
     <color name="black">#FF000000</color>
-    <color name="black_">#1b1d20</color>
+    <color name="black_off">#1b1d20</color>
     <color name="card_background_color">#660D47A1</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="white_CC">#CCFFFFFF</color>
-
-
+    <color name="white_off">#CCFFFFFF</color>
 </resources>

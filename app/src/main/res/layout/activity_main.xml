@@ -44,7 +44,7 @@
                         android:fontFamily="@font/roboto_light"
                         android:includeFontPadding="false"
                         android:text="@string/connecting"
-                        android:textColor="@color/white_CC" />
+                        android:textColor="@color/white_off" />
 
                     <com.google.android.material.progressindicator.CircularProgressIndicator
                         android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                         android:includeFontPadding="false"
                         android:setTemp="@{data.temperatureCelsius}"
                         android:text="@string/temp_placeholder"
-                        android:textColor="@color/white_CC"
+                        android:textColor="@color/white_off"
                         android:textSize="80sp" />
 
                     <TextView
@@ -87,7 +87,7 @@
                         android:fontFamily="@font/roboto_light"
                         android:includeFontPadding="false"
                         android:text="@{data.weatherType.weatherDesc}"
-                        android:textColor="@color/white_CC"
+                        android:textColor="@color/white_off"
                         android:textSize="20sp"
                         tools:text="foggy" />
 
@@ -99,7 +99,7 @@
                         android:fontFamily="@font/roboto_light"
                         android:includeFontPadding="false"
                         android:setHighAndLow="@{data}"
-                        android:textColor="@color/white_CC"
+                        android:textColor="@color/white_off"
                         android:textSize="20sp"
                         tools:text="@string/h_l_placeholder" />
 

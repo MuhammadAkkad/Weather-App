@@ -136,7 +136,6 @@ class MainActivity : AppCompatActivity() {
                 R.style.CustomMaterialDialog
             ).setTitle(getString(R.string.permission_title))
                 .setMessage(getString(R.string.permission_message))
-                .setIcon(android.R.drawable.ic_menu_mylocation)
                 .setPositiveButton(android.R.string.ok) { _, _ ->
                     run {
                         askForPermission()

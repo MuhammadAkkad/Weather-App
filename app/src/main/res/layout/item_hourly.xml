@@ -17,7 +17,7 @@
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:orientation="vertical"
-        tools:background="@color/black_">
+        tools:background="@color/black_off">
 
         <TextView
             android:id="@+id/item_hourly_time"
