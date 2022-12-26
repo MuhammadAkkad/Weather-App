@@ -20,7 +20,6 @@ class BindingAdapters {
         fun setImageViewResource(imageView: ImageView, weatherType: WeatherType) {
             try {
                 imageView.setImageResource(weatherType.iconRes)
-
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -34,20 +33,9 @@ class BindingAdapters {
                     "Now"
                 } else {
                     weatherData.time.format(
-                        DateTimeFormatter.ofPattern("H a")
+                        DateTimeFormatter.ofPattern("Ha")
                     ).toString()
                 }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-
-        @BindingAdapter("android:setHourTemp")
-        @JvmStatic
-        fun setTextViewHourTemp(textView: TextView, weatherData: WeatherDataHourlyModel) {
-            try {
-                val temp = weatherData.temperatureCelsius.toInt().toString() + "°"
-                textView.text = temp
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -65,7 +53,6 @@ class BindingAdapters {
                 e.printStackTrace()
             }
         }
-
 
         @BindingAdapter("android:setHighAndLow")
         @JvmStatic
@@ -103,8 +90,6 @@ class BindingAdapters {
                 e.printStackTrace()
             }
         }
-
-
     }
 
 }

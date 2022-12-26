@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_6"
             android:fontFamily="@font/roboto_medium"
-            android:setHourTemp="@{data}"
+            android:setTemp="@{data.temperatureCelsius}"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_16"
             tools:text="7" />

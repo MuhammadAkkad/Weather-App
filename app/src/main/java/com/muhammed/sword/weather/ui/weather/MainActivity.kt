@@ -3,7 +3,6 @@ package com.muhammed.sword.weather.ui.weather
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -54,11 +53,11 @@ class MainActivity : AppCompatActivity() {
     private fun setupObservers() {
         lifecycleScope.launch(Dispatchers.Main) {
             viewModel.uiState.collect { uiState ->
+                binding.swipeToRefresh.isRefreshing = uiState.isLoading
                 if (uiState.error != null) {
-                    showError(uiState)
+                    showError()
                 } else if (uiState.data != null) {
                     setupUI(uiState)
-                    binding.swipeToRefresh.isEnabled = true
                 }
             }
         }
@@ -76,32 +75,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupSwipeToRefresh() {
-        // disable by default. enabled when data is ready on screen.
-        binding.swipeToRefresh.isEnabled = false
         binding.swipeToRefresh.setOnRefreshListener {
             getData()
-            binding.swipeToRefresh.isRefreshing = false
         }
     }
 
     private fun setupUI(weatherState: WeatherState) {
-        binding.connectingLayout.visibility =
-            if (weatherState.isLoading) View.VISIBLE else View.GONE
         weatherState.data?.let { weatherInfo ->
-            binding.data = weatherInfo.currentWeather
-            weatherState.data.let {
-                rvHours.addData(it.weatherDataPerHour)
-                rvDaily.addData(it.weatherDataPerDay)
-            }
+            binding.data = weatherInfo.currentWeather // current data
+            rvHours.addData(weatherInfo.weatherDataPerHour)
+            rvDaily.addData(weatherInfo.weatherDataPerDay)
         }
     }
 
-    private fun showError(data: WeatherState) {
-        Snackbar.make(binding.swipeToRefresh, data.error.toString(), Snackbar.LENGTH_SHORT).show()
+    private fun showError() {
+        Snackbar.make(binding.root, getString(R.string.error), Snackbar.LENGTH_LONG).show()
     }
 
     private fun getData() {
-        binding.swipeToRefresh.isEnabled = false
         viewModel.getWeatherData()
     }
 
@@ -114,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         permissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { map ->
-            if (!map.all { it.value }) {
+            if (!map.all { it.value }) { // if not granted show popup
                 showPopUp()
             } else {
                 getData()
@@ -123,28 +114,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkForPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-            == PackageManager.PERMISSION_DENIED
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_DENIED
         ) showPopUp()
         else getData()
     }
 
     private fun showPopUp() {
-        val builder: MaterialAlertDialogBuilder =
-            MaterialAlertDialogBuilder(
-                this,
-                R.style.CustomMaterialDialog
-            ).setTitle(getString(R.string.permission_title))
-                .setMessage(getString(R.string.permission_message))
-                .setPositiveButton(android.R.string.ok) { _, _ ->
-                    run {
-                        askForPermission()
-                    }
-                }.setNegativeButton(android.R.string.cancel) { _, _ ->
-                    run {
-                        finish()
-                    }
+        val builder: MaterialAlertDialogBuilder = MaterialAlertDialogBuilder(
+            this, R.style.CustomMaterialDialog
+        ).setTitle(getString(R.string.permission_title))
+            .setMessage(getString(R.string.permission_message))
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                run {
+                    askForPermission()
                 }
+            }.setNegativeButton(android.R.string.cancel) { _, _ ->
+                run {
+                    finish()
+                }
+            }
         builder.show()
     }
 

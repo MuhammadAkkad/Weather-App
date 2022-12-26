@@ -10,6 +10,6 @@ abstract class WeatherDao {
     abstract fun getAll(): WeatherDataDto?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertAll(data: WeatherDataDto)
+    abstract fun insert(data: WeatherDataDto)
 
 }

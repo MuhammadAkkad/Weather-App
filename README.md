@@ -28,7 +28,7 @@ solution: Open google maps give permission and wait until your location is regis
 Our app can work perfectly on Android 8 and above.
 older versions are not guaranteed to work properly
 
-![Drak_Mode]<img src="https://user-images.githubusercontent.com/27894358/209462525-9a2748a8-848c-41da-8f45-d8225b202e61.png" width="300" height="732">
+![Dark_Mode]<img src="https://user-images.githubusercontent.com/27894358/209462525-9a2748a8-848c-41da-8f45-d8225b202e61.png" width="300" height="732">
 ![Light_mode]<img src="https://user-images.githubusercontent.com/27894358/209462527-2d66bdde-f326-4f73-ab2e-4abd062bf585.png" width="300" height="732">
 
 

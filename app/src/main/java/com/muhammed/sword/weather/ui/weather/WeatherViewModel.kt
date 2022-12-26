@@ -21,13 +21,13 @@ class WeatherViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(WeatherState())
     val uiState: StateFlow<WeatherState> = _uiState
-    private var isLoading = false
+    private var isLoading = false // to prevent concurrent api requests.
 
     fun getWeatherData() {
         if (!isLoading) {
+            isLoading = true
+            _uiState.value = WeatherState(isLoading = isLoading)
             viewModelScope.launch(Dispatchers.IO) {
-                isLoading = true
-                _uiState.value = WeatherState(isLoading = isLoading)
                 locationTracker.getCurrentLocation()?.let { location ->
                     val now = LocalDateTime.now()
                     val todayDate = now.toLocalDate().toString()
@@ -39,14 +39,18 @@ class WeatherViewModel @Inject constructor(
                         plusSevenDays
                     )
                         .catch {
-                            _uiState.value = WeatherState(error = it.message)
+                            _uiState.value = WeatherState(error = it.message, isLoading = false)
                             getOfflineData()
                         }
                         .collect {
                             if (it.data == null) {
                                 getOfflineData()
                             } else {
-                                _uiState.value = WeatherState(data = it.data, isOffline = false)
+                                _uiState.value = WeatherState(
+                                    data = it.data,
+                                    isOffline = false,
+                                    isLoading = false
+                                )
                             }
                         }
                 }
@@ -59,7 +63,8 @@ class WeatherViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             repository.getOfflineData().collect {
                 it?.let { weatherInfo ->
-                    _uiState.value = WeatherState(data = weatherInfo, isOffline = true)
+                    _uiState.value =
+                        WeatherState(data = weatherInfo, isOffline = true, isLoading = true)
                 }
             }
         }

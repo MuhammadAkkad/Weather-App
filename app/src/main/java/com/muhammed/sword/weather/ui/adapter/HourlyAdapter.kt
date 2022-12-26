@@ -6,16 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.muhammed.sword.databinding.ItemHourlyBinding
 import com.muhammed.sword.weather.domain.weather.WeatherDataHourlyModel
 
-
 class HourlyAdapter :
     RecyclerView.Adapter<HourlyAdapter.ViewHolder>() {
-
 
     private var itemList: List<WeatherDataHourlyModel> = arrayListOf()
 
     class ViewHolder(private val binding: ItemHourlyBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val view = itemView
 
         fun bind(data: WeatherDataHourlyModel) {
             binding.data = data

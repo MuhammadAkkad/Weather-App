@@ -10,4 +10,5 @@ object Extensions {
         val localDateTime = LocalDate.parse(this, dateTimeFormatter).atStartOfDay()
         return localDateTime.toLocalDate()
     }
+
 }

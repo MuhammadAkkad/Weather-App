@@ -8,8 +8,8 @@ import com.muhammed.sword.weather.data.db.Converters
 
 @Entity(tableName = "weather_data")
 data class WeatherDataDto(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey(autoGenerate = false)
+    val id: Int = 0, // only one entry is expected.
     @TypeConverters(Converters::class) @SerializedName("hourly_units") var hourlyUnits: HourlyUnitsDto = HourlyUnitsDto(),
     @TypeConverters(Converters::class) @SerializedName("hourly") var hourly: HourlyDto = HourlyDto(),
     @TypeConverters(Converters::class) @SerializedName("daily") var daily: DailyDto = DailyDto()

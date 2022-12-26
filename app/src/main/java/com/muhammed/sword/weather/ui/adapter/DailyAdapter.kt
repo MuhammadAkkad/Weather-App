@@ -14,7 +14,6 @@ class DailyAdapter :
 
     class ViewHolder(private val binding: ItemDailyBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val view = itemView
 
         fun bind(data: WeatherDataDailyModel) {
             binding.data = data

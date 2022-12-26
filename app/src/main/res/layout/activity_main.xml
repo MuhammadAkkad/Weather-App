@@ -27,37 +27,6 @@
                 tools:context=".weather.ui.weather.MainActivity">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/connectingLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin_12"
-                    android:orientation="horizontal"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="@dimen/margin_6"
-                        android:fontFamily="@font/roboto_light"
-                        android:includeFontPadding="false"
-                        android:text="@string/connecting"
-                        android:textColor="@color/white_off" />
-
-                    <com.google.android.material.progressindicator.CircularProgressIndicator
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:indeterminate="true"
-                        app:indicatorColor="@color/white"
-                        app:indicatorSize="@dimen/margin_12"
-                        app:trackThickness="@dimen/margin_1" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/currentTemperatureLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -197,11 +166,9 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
-
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

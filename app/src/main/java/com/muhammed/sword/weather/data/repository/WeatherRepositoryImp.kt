@@ -37,7 +37,7 @@ class WeatherRepositoryImp @Inject constructor(
 
     override fun saveDataToDb(data: WeatherDataDto?) {
         data?.let {
-            dao.insertAll(it)
+            dao.insert(it)
         }
     }
 
